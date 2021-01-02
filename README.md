@@ -10,3 +10,4 @@
 * autenticação
 * pagina de contatos
 * layout com EJS
+* pagina de chat com socket.io

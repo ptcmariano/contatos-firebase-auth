@@ -14,6 +14,8 @@
     "express": "4.15.2",
     "express-session": "1.15.3",
     "method-override": "2.3.9",
-    "nodemon": "^2.0.6"
+    "nodemon": "^2.0.6",
+    "socket.io": "^3.0.4",
+    "socket.io-client": "^3.0.4"
   }
 }
