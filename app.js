@@ -7,6 +7,7 @@ const expressSession = require('express-session');
 const methodOverride = require('method-override');
 const socketIO = require('socket.io');
 const http = require('http');
+// const store = new expressSession.MemoryStore();
 
 const error = require('./middlewares/error');
 const app = express();
@@ -26,15 +27,8 @@ consign({})
   .include('models')
   .then('controllers')
   .then('routes')
-  .into(app)
+  .into(app,io)
 ;
-
-io.on('connection', (client) => {
-  client.on('send-server', (data) => {
-      client.emit('send-client', data);
-      client.broadcast.emit('send-client', data);
-  });
-});
 
 app.use(error.notFound);
 app.use(error.serverError);
